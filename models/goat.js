@@ -29,5 +29,13 @@ module.exports = function(sequelize, DataTypes) {
 			}
 		}
 	});
+
+	Goat.associate = function(models) {
+		Goat.belongsTo(models.Seller, {
+			foreignKey: {
+				allowNull: false
+			}
+		});
+	};
 	return Goat;
 };
