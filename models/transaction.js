@@ -15,11 +15,8 @@ module.exports = function(sequelize, Datatypes) {
 			}
 		},
 		goat_price: {
-<<<<<<< HEAD
+
 			type: Datatypes.DECIMAL(10, 2),
-=======
-			type: Datatypes.Decimal(10, 2),
->>>>>>> 39a95416437207a4b9ce2bbe0519712bb76c4f1b
 			allowNull: false,
 			validate: {
 				len: [1]
@@ -40,7 +37,7 @@ module.exports = function(sequelize, Datatypes) {
 			}
 		},
 	});
-<<<<<<< HEAD
+
 
 	Transaction.associate = function(models) {
 		Transaction.belongsTo(models.Seller, {
@@ -49,7 +46,6 @@ module.exports = function(sequelize, Datatypes) {
 			}
 		});
 	};
-=======
->>>>>>> 39a95416437207a4b9ce2bbe0519712bb76c4f1b
+
 	return Transaction;
 };
