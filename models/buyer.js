@@ -10,7 +10,7 @@ module.exports = function(sequelize, Datatypes) {
 		buyer_funds: {
 			type: Datatypes.Decimal(10, 2),
 			allowNull: false,
-			validate: {
+			validate: { 
 				len: [1]
 			}
 		},
