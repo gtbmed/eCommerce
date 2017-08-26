@@ -8,7 +8,7 @@ module.exports = function(sequelize, Datatypes) {
 			}
 		},
 
-		goat_name: {
+		sellerAddress: {
 			type: Datatypes.STRING,
 			allowNull: false,
 			validate: {
@@ -24,7 +24,7 @@ module.exports = function(sequelize, Datatypes) {
 		},
 
 		seller_funds: {
-			type: Datatypes.Decimal(10, 2),
+			type: Datatypes.DECIMAL(10, 2),
 			allowNull: false,
 		}
 
