@@ -40,7 +40,7 @@ module.exports = function(sequelize, Datatypes) {
 
 
 	Transaction.associate = function(models) {
-		Transaction.belongsTo(models.Seller, {
+		Transaction.belongsTo(models.User, {
 			foreignKey: {
 				allowNull: false
 			}
