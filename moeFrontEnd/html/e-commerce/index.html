@@ -40,13 +40,15 @@
       <!-- Header -->
 
       <header id="js-header" class="u-header u-header--static">
+
         <!-- Top Bar -->
         <div class="u-header__section u-header__section--dark g-bg-black g-transition-0_3 g-py-10">
           <div class="container">
             <div class="row flex-column flex-sm-row justify-content-between align-items-center text-uppercase g-font-weight-600 g-color-white g-font-size-12 g-mx-0--lg">
 
+
               <div class="col-auto g-pb-10 g-pb-0--sm">
-                <i class="fa fa-phone g-font-size-18 g-valign-middle g-color-primary g-mr-10 g-mt-minus-2"></i> 1800-GOAT
+                <i class="fa fa-phone g-font-size-18 g-valign-middle g-color-primary g-mr-10 g-mt-minus-2"></i> 1800 GOAT
               </div>
 
               <div class="col-auto hidden-md-down">
@@ -55,14 +57,15 @@
 
               <div class="col-auto g-pos-rel g-pb-10 g-pb-0--sm">
                 <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
-
                   <li class="list-inline-item g-mx-4">
-                    <a class="g-color-white g-color-primary--hover g-text-underline--none--hover" href="#">Login</a>
+                  </li>
+                  <li class="list-inline-item g-mx-4">
+                    <a class="g-color-white g-color-primary--hover g-text-underline--none--hover" href="page-login-1.html">Login</a>
                   </li>
                 </ul>
               </div>
 
-              <!-- <div class="col-auto">
+              <div class="col-auto">
 
                 <!-- Basket -->
                 <div class="u-basket d-inline-block g-valign-middle g-pt-2">
@@ -77,7 +80,7 @@
                      data-dropdown-hide-on-scroll="false"
                      data-dropdown-animation-in="fadeIn"
                      data-dropdown-animation-out="fadeOut">
-                    <span class="u-badge-v1--sm g-color-white g-bg-primary g-rounded-50x">2</span>
+                    <span class="u-badge-v1--sm g-color-white g-bg-primary g-rounded-50x">1</span>
                     <i class="fa fa-shopping-cart"></i>
                   </a>
 
@@ -91,11 +94,18 @@
                             <a href="#" class="u-basket__product-img"><img src="../assets/img-temp/150x150/img1.jpg" alt="Image Description"></a>
                           </div>
 
-
+                          <div class="col-8">
+                            <h6 class="g-font-weight-600 g-mb-0">
+                              <a href="#" class="g-color-white g-color-white--hover g-text-underline--none--hover">Black Goat</a>
+                            </h6>
+                            <small class="g-color-gray-dark-v5 g-font-size-14">1 x $400.00</small>
+                          </div>
                         </div>
                         <button class="u-basket__product-remove" type="button">&times;</button>
                       </div>
+                      <!-- End Product -->
 
+                      <!-- End Product -->
                     </div>
 
                     <div class="g-brd-top g-brd-white-opacity-0_1 g-pa-15 g-pb-20">
@@ -114,13 +124,13 @@
                 <!-- End Basket -->
 
                 <!-- Search -->
+
                   <!-- End Search Form -->
                 </div>
                 <!-- End Search -->
               </div>
             </div>
           </div>
-        </div>
         <!-- End Top Bar -->
         <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
           <nav class="js-mega-menu navbar navbar-toggleable-md">
@@ -165,7 +175,7 @@
                       <li class="dropdown-item"><a class="nav-link" href="#">List Filter</a></li>
                       <li class="dropdown-item"><a class="nav-link" href="#">Product</a></li>
                       <li class="dropdown-item"><a class="nav-link" href="#">Checkout</a></li>
-                      <li class="dropdown-item"><a class="nav-link" href="#">Login</a></li>
+                      <li class="dropdown-item"><a class="nav-link" href="page-login-1.html">Login</a></li>
                       <li class="dropdown-item"><a class="nav-link" href="#">Signup</a></li>
                     </ul>
                     <!-- End Submenu -->
@@ -594,30 +604,58 @@
     </main>
 
     <!-- JS Global Compulsory -->
-    <!-- <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
     <script src="../assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
     <script src="../assets/vendor/tether.min.js"></script>
-    <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script> -->
+    <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
 
     <!-- JS Implementing Plugins -->
-    <!-- <script src="../assets/vendor/jquery.countdown.min.js"></script>
+    <script src="../assets/vendor/jquery.countdown.min.js"></script>
     <script src="../assets/vendor/slick-carousel/slick/slick.js"></script>
     <script src="../assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
-    <script src="../assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script> -->
+    <script src="../assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 
     <!-- JS Unify -->
-    <!-- <script src="../assets/js/hs.core.js"></script>
+    <script src="../assets/js/hs.core.js"></script>
     <script src="../assets/js/components/hs.header.js"></script>
     <script src="../assets/js/helpers/hs.hamburgers.js"></script>
     <script src="../assets/js/components/hs.dropdown.js"></script>
     <script src="../assets/js/components/hs.scrollbar.js"></script>
     <script src="../assets/js/components/hs.countdown.js"></script>
-    <script src="../assets/js/components/hs.go-to.js"></script> -->
+    <script src="../assets/js/components/hs.go-to.js"></script>
 
     <!-- JS Customization -->
-    <!-- <script src="../assets/js/custom.js"></script> -->
+    <script src="../assets/js/custom.js"></script>
 
     <!-- JS Plugins Init. -->
+    <script>
+      $(document).on('ready', function () {
+        // initialization of header
+        $.HSCore.components.HSHeader.init($('#js-header'));
+        $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+        // initialization of HSMegaMenu component
+        $('.js-mega-menu').HSMegaMenu({
+          event: 'hover',
+          pageContainer: $('.container'),
+          breakpoint: 991
+        });
+
+        // initialization of HSDropdown component
+        $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+          afterOpen: function () {
+            $(this).find('input[type="search"]').focus();
+          }
+        });
+
+        // initialization of HSScrollBar component
+        $.HSCore.components.HSScrollBar.init($('.js-scrollbar'));
+
+        // initialization of go to
+        $.HSCore.components.HSGoTo.init('.js-go-to');
+      });
+    </script>
+
   </body>
 
 </html>
