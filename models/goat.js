@@ -14,6 +14,13 @@ module.exports = function(sequelize, DataTypes) {
 				len: [1]
 			}
 		},
+		goatSex: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			validate: {
+				len: [1]
+			}
+		},
 		goat_price: {
 			type: DataTypes.DECIMAL(10, 2),
 			allowNull: false,
