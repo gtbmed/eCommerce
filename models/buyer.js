@@ -7,14 +7,14 @@ module.exports = function(sequelize, Datatypes) {
 				len: [1]
 			}
 		},
-		buyer_funds: {
-			type: Datatypes.Decimal(10, 2),
+		buyerAddress: {
+			type: Datatypes.STRING,
 			allowNull: false,
 			validate: { 
 				len: [1]
 			}
 		},
-		payment_type: {
+		??????: {
 			type: Datatypes.STRING,
 			allowNull: false,
 			validate: {

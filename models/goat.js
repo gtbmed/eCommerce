@@ -15,19 +15,13 @@ module.exports = function(sequelize, DataTypes) {
 			}
 		},
 		goat_price: {
-			type: DataTypes.DECIMAL(10,2),
+			type: DataTypes.DECIMAL(10, 2),
 			allowNull: false,
 			validate: {
 				isDecimal: true
 			}
 		},
-		goat_owner: {
-			type: DataTypes.STRING,
-			allowNull: false,
-			validate: {
-				len: [1]
-			}
-		}
+		
 	});
 
 	Goat.associate = function(models) {
