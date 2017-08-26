@@ -1,0 +1,35 @@
+//
+// Variables and Mixins
+//
+
+@import "variables.e-commerce";
+@import "../../../assets/include/scss/unify";
+
+p {
+  color: $g-color-gray-dark-v4;
+}
+
+/*------------------------------------
+  Carousel indicators v1
+------------------------------------*/
+
+.u-carousel-indicators-v1,
+.u-carousel-indicators-v1--white {
+	li {
+    &.slick-active {
+      span {
+        background-color: $g-color-primary !important;
+      }
+    }
+  }
+
+  span {
+    background-color: darken($g-bg-color-secondary, 5%) !important;
+  }
+}
+
+.u-carousel-indicators-v1 {
+  span {
+    background-color: darken($g-bg-color-secondary, 5%) !important;
+  }
+}
