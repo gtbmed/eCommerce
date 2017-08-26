@@ -1,7 +1,7 @@
 {
   "name": "ecommerce",
   "version": "1.0.0",
-  "description": "",
+  "description": "Goat group project",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,10 +11,31 @@
     "type": "git",
     "url": "git+https://github.com/gtbmed/eCommerce.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "group",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/gtbmed/eCommerce/issues"
   },
-  "homepage": "https://github.com/gtbmed/eCommerce#readme"
+  "homepage": "https://github.com/gtbmed/eCommerce#readme",
+  "keywords": [
+    "goat",
+    "trade",
+    "nodeJs",
+    "handlebars",
+    "mysql",
+    "sequelize"
+  ],
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.9",
+    "mysql": "^2.14.1",
+    "mysql2": "^1.4.1",
+    "passport": "^0.4.0",
+    "path": "^0.12.7",
+    "sequelize": "^4.7.5"
+  },
+  "devDependencies": {}
 }
