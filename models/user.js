@@ -32,36 +32,8 @@ module.exports = function(sequelize, DataTypes) {
         user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
         cb(null, options);
       }
-    },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
-    account: {
-      type: DataTypes.DECIMAL(10, 2),
-      validate: {
-        isDecimal: true
-      }
-    },
-    address: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    };
+    }
   });
-
-  User.associate = function(models) {
-    User.hasMany(models.Goat, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
   return User;
 
 };

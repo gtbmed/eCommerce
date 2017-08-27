@@ -28,7 +28,13 @@ module.exports = function(sequelize, DataTypes) {
 				isDecimal: true
 			}
 		},
-		
+	    picture_url: {
+	      	type: DataTypes.STRING,
+	      	allowNull: false,
+	      	validate: {
+	        	len: [1]
+	      	}
+		}
 	});
 
 	Goat.associate = function(models) {
