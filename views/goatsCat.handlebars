@@ -1,0 +1,33 @@
+<div class="container-fluid">
+
+
+
+      <h2> Goats List </h2>
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+           <th> Name </th>
+           <th> Color</th>
+           <th> Sex </th>
+           <th> Price </th>
+           <th> Picture URL </th>
+          </tr>
+        </thead>
+        <tbody>
+            {{#each goats}} 
+              {{#unless this.goat_sold}}
+                <tr>
+                  <td>{{this.goat_name}}</td>
+                  <td>{{goat_color}}</td>
+                  <td>{{goat_sex}}</td>
+                  <td>{{goat_price}}</td>
+                  <td><img src = {{picture_url}} width="100px" height ="100px"></td>
+                  <td>
+                    Buy Now
+                  </td>
+                </tr>
+              {{/unless}}
+            {{/each}}
+        </tbody>
+    </table>
