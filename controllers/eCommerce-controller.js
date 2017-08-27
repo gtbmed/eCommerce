@@ -107,29 +107,40 @@ module.exports = function(app) {
     // });
 
     // Retreive goat data
-    router.get('/transactions', function(req,res) {
-        db.Goat.findAll({})
-                .then(function(data){
-                var goatObject = {
-                    goats: data
-                };
-            return res.render('goats', goatObject);
-            }).catch(function(err) {
-            res.json(err)
-        });
+    router.get('/goatCat/:id', function(req,res,next){
+        res.render('goatCat',{output: req.params.id});
     });
 
-    router.get('/transactions', function(req,res) {
-        db.Member.findAll({})
-                .then(function(data){
-                var memberObject = {
-                    members: data
-                };
-            return res.render('members', memberObject);
-            }).catch(function(err) {
-            res.json(err)
-        });
+    router.post('goatCat/submit', function(req,res,next){
+        var id = req.params.id;
+        res.redirect('/goatCat' + id)
     });
+
+
+
+    // router.get('/transactions', function(req,res) {
+    //     db.Goat.findAll({})
+    //             .then(function(data){
+    //             var goatObject = {
+    //                 goats: data
+    //             };
+    //         return res.render('goats', goatObject);
+    //         }).catch(function(err) {
+    //         res.json(err)
+    //     });
+    // });
+
+    // router.get('/transactions', function(req,res) {
+    //     db.Member.findAll({})
+    //             .then(function(data){
+    //             var memberObject = {
+    //                 members: data
+    //             };
+    //         return res.render('members', memberObject);
+    //         }).catch(function(err) {
+    //         res.json(err)
+    //     });
+    // });
 
     router.post("/transactions", function(req, res) {
         db.Transaction.create({
