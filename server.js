@@ -23,6 +23,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Override with POST having ?_method=DELETE
 app.use(method("_method"));
 
+// Static for CSS & Images
+app.use(express.static(process.cwd() + "/public"));
+
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
@@ -34,8 +37,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Requiring our routes
-// require("./routes/html-routes.js")(app);
-// require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
 db.sequelize.sync({ force: false }).then(function() {
   app.listen(port, function() {
