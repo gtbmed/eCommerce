@@ -82,7 +82,7 @@ module.exports = function(app) {
         db.Transaction.findAll({ include: [{ all: true }]})
                 .then(function(data){
                 var transObject = {
-                    transaction: data
+                    transactions: data
                 };
             return res.render('transaction', transObject);
             }).catch(function(err) {
@@ -105,40 +105,36 @@ module.exports = function(app) {
     });
 
 
-
 // --------------------------------------------------
 // Landing Page
 // --------------------------------------------------
 
-
-    // router.get('/', function(req,res) {
-    //     db.User.findAll({})
-    //             .then(function(data){
-    //             var userObject = {
-    //                 user: data
-    //             };
-    //         return res.render('index', userObject);
-    //         }).catch(function(err) {
-    //         res.json(err)
-    //     });
-    // });
-
-
     // Goat of the Day
     router.get('/',function(req,res){
         db.Goat.findOne({ 
-            where: {id: 5} })
+            where: {id: 2} })
         .then(function(data){
-                var goatObject = {
-                    goat: data
+                var goatOftheDay = {
+                    goats: data
                 };
-            return res.render('index', goatObject);
+            return res.render('index', goatOftheDay );
             }).catch(function(err) {
             res.json(err)
         });
     })
 
+// --------------------------------------------------
+// Transaction Page
+// --------------------------------------------------
 
+// models.Survey.create(survey, {
+//     include: [{
+//         model: models.Question, 
+//         include: [models.Option]
+//     }]
+// }).then(function() {
+//     reply({success:1});
+// });
 
 
     return router;
