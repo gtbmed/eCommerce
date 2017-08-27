@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
 				len: [1]
 			}
 		},
-		goatSex: {
+		goat_sex: {
 			type: DataTypes.STRING,
 			allowNull: false,
 			validate: {
@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
 			}
 		},
 		goat_price: {
-			type: DataTypes.DECIMAL(10, 2),
+			type: DataTypes.INTEGER,
 			allowNull: false,
 			validate: {
 				isDecimal: true
@@ -34,7 +34,14 @@ module.exports = function(sequelize, DataTypes) {
 	      	validate: {
 	        	len: [1]
 	      	}
-		}
+		},
+		goat_sold: {
+	      	type: DataTypes.BOOLEAN,
+	      	defaultValue:false,
+	      	validate: {
+	        	len: [1]
+	      	}
+	    }
 	});
 
 	return Goat;
