@@ -23,6 +23,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Override with POST having ?_method=DELETE
 app.use(method("_method"));
 
+// Static for CSS & Images
+app.use(express.static(process.cwd() + "/public"));
+
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
