@@ -7,44 +7,67 @@ var db = require("../models");
 
 module.exports = function(app) {
 
-	router.get('/', function(req,res) {
-        db.xxxxx.findAll({include:{model: db.xxxxx}})
+// Goats 
+
+	router.get('/goats', function(req,res) {
+        db.Goat.findAll({include:{model: db.User}})
                 .then(function(data){
                 var goatObject = {
-                    xxxxx: data
+                    goats: data
                 };
-            return res.render('index', goatObject);
+            return res.render('goats', goatObject);
             }).catch(function(err) {
             res.json(err)
         });
     });
 
-    router.post("/", function(req, res) {
-        db.xxxx.create({
 
-            goat_name: req.body.xxxxInput,
-            xxxx: req.body.userInput
+    router.post("/goats", function(req, res) {
+        db.Goat.create({
+
+            goat_name: req.body.goat_name,
+            goat_color: req.body.goat_color,
+            goat_sex: req.body.goat_sex,
+            goat_price: req.body.goat_price,
+            picture_url: req.body.picture_url    
 
             }).then(function(data) {
                 
-                res.redirect("/");
+                res.redirect("/goats");
             })
     });
 
-    router.put("/:id", function(req, res) {
-        db.xxxx.update({
-                xxx: req.body.something
-            }, {
-                where: {
-                    id: req.params.id
-                }
+
+
+// Members
+    router.get('/members', function(req,res) {
+        db.Member.findAll({})
+                .then(function(data){
+                var memberObject = {
+                    members: data
+                };
+            return res.render('members', memberObject);
+            }).catch(function(err) {
+            res.json(err)
+        });
+    });
+
+
+    router.post("/members", function(req, res) {
+        db.Member.create({
+
+            member_name: req.body.member_name,
+            credit_card: req.body.credit_card,
+            address: req.body.address
+
             }).then(function(data) {
                 
-                res.redirect("/");
-            }).catch(function(err) {
-                res.json(err)
-            });
+                res.redirect("/members");
+            })
     });
+
+
+
 
 
 
