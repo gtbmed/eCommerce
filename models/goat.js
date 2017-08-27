@@ -37,12 +37,5 @@ module.exports = function(sequelize, DataTypes) {
 		}
 	});
 
-	Goat.associate = function(models) {
-		Goat.belongsTo(models.User, {
-			foreignKey: {
-				allowNull: false
-			}
-		});
-	};
 	return Goat;
 };
