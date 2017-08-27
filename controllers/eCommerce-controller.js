@@ -7,10 +7,13 @@ var db = require("../models");
 
 module.exports = function(app) {
 
-// Goats 
+
+// --------------------------------------------------
+// Goats Page
+// --------------------------------------------------
 
 	router.get('/goats', function(req,res) {
-        db.Goat.findAll({include:{model: db.User}})
+        db.Goat.findAll({})
                 .then(function(data){
                 var goatObject = {
                     goats: data
@@ -38,8 +41,10 @@ module.exports = function(app) {
     });
 
 
+// --------------------------------------------------
+// Members Page
+// --------------------------------------------------
 
-// Members
     router.get('/members', function(req,res) {
         db.Member.findAll({})
                 .then(function(data){
