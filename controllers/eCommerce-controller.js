@@ -41,6 +41,22 @@ module.exports = function(app) {
             })
     });
 
+// --------------------------------------------------
+// Goats Catelog
+// --------------------------------------------------
+
+    router.get('/goatsCat', function(req,res) {
+        db.Goat.findAll({})
+                .then(function(data){
+                var goatObject = {
+                    goats: data
+                };
+            return res.render('goatsCat', goatObject);
+            }).catch(function(err) {
+            res.json(err)
+        });
+    });
+
 
 // --------------------------------------------------
 // Members Page
@@ -78,31 +94,56 @@ module.exports = function(app) {
 // --------------------------------------------------
 
 
-    router.get('/transaction', function(req,res) {
-        db.Transaction.findAll({ include: [{ all: true }]})
+    // router.get('/transaction', function(req,res) {
+    //     db.Transaction.findAll({ include: [{ all: true }]})
+    //             .then(function(data){
+    //             var transObject = {
+    //                 transactions: data
+    //             };
+    //         return res.render('transaction', transObject);
+    //         }).catch(function(err) {
+    //         res.json(err)
+    //     });
+    // });
+
+    // Retreive goat data
+    router.get('/transactions', function(req,res) {
+        db.Goat.findAll({})
                 .then(function(data){
-                var transObject = {
-                    transactions: data
+                var goatObject = {
+                    goats: data
                 };
-            return res.render('transaction', transObject);
+            return res.render('goats', goatObject);
             }).catch(function(err) {
             res.json(err)
         });
     });
 
+    router.get('/transactions', function(req,res) {
+        db.Member.findAll({})
+                .then(function(data){
+                var memberObject = {
+                    members: data
+                };
+            return res.render('members', memberObject);
+            }).catch(function(err) {
+            res.json(err)
+        });
+    });
 
-    router.post("/transaction", function(req, res) {
-        db.Member.create({
+    router.post("/transactions", function(req, res) {
+        db.Transaction.create({
 
-            member_name: req.body.member_name,
-            credit_card: req.body.credit_card,
-            address: req.body.address
-
+            member_name: req.body.MemberId,
+            credit_card: req.body.UserId,
+ 
             }).then(function(data) {
                 
                 res.redirect("/transaction");
             })
     });
+
+
 
 
 // --------------------------------------------------
@@ -127,6 +168,7 @@ module.exports = function(app) {
 // Transaction Page
 // --------------------------------------------------
 
+
 // models.Survey.create(survey, {
 //     include: [{
 //         model: models.Question, 
@@ -135,6 +177,24 @@ module.exports = function(app) {
 // }).then(function() {
 //     reply({success:1});
 // });
+
+
+// --------------------------------------------------
+// Login Page
+// --------------------------------------------------
+
+
+    // router.get('/signup', function(req,res) {
+    //     db.User.findAll({})
+    //             .then(function(data){
+    //             var userObject = {
+    //                 users: data
+    //             };
+    //         return res.render('users', userObject);
+    //         }).catch(function(err) {
+    //         res.json(err)
+    //     });
+    // });
 
 
     return router;
