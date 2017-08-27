@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
 			}
 		},
 		goat_price: {
-			type: DataTypes.DECIMAL(10, 2),
+			type: DataTypes.INTEGER,
 			allowNull: false,
 			validate: {
 				isDecimal: true
