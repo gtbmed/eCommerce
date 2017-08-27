@@ -24,7 +24,8 @@
                   <td>{{goat_price}}</td>
                   <td><img src = {{picture_url}} width="100px" height ="100px"></td>
                   <td>
-                    Buy Now
+                    <form action="/goatsCat/submit" method="post">
+                      <button type="submit" name={{id}} id={{id}}>Buy Now</button>
                   </td>
                 </tr>
               {{/unless}}
