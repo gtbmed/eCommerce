@@ -1,14 +1,676 @@
-	
+{{#section 'head'}}
+    <!-- Title -->
+    <title>Trader Goat's</title>
 
-	<h2> Goat of the Day </h2>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/bootstrap.min.css">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="../assets/vendor/icon-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/vendor/icon-line-pro/style.css">
+    <link rel="stylesheet" href="../assets/vendor/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="../assets/vendor/icon-hs/style.css">
+    <link rel="stylesheet" href="../assets/vendor/animate.css">
+    <link rel="stylesheet" href="../assets/vendor/hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" href="../assets/vendor/hs-megamenu/src/hs.megamenu.css">
+    <link rel="stylesheet" href="../assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.min.css">
+
+    <!-- CSS Unify Theme -->
+    <link rel="stylesheet" href="../e-commerce/assets/css/styles.e-commerce.css">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="../assets/css/custom.css">
+{{/section}}	
+
+	{{!-- <h2> Goat of the Day </h2>
 
 	<h3>{{goats.goat_name}}</h3>
 
 	<img src = {{goats.picture_url}} width="300px" height ="300px">
 	<ul>
-	<li>Gender : {{goats.goat_sex}}</li
+	
+	<li>Gender : {{goats.goat_sex}}</li>
+	<li><label value = {{goats.goat_sex}} id ="gender"></label></li>
+	
     <li>Color  : {{goats.goat_color}} </li>	
     <li>Price  : $ {{goats.goat_price}} </li>
-    </ul>
+    </ul> --}}
 
+<main>
+      <!-- Header -->
+
+      <header id="js-header" class="u-header u-header--static">
+
+        <!-- Top Bar -->
+        <div class="u-header__section u-header__section--dark g-bg-black g-transition-0_3 g-py-10">
+          <div class="container">
+            <div class="row flex-column flex-sm-row justify-content-between align-items-center text-uppercase g-font-weight-600 g-color-white g-font-size-12 g-mx-0--lg">
+
+
+              <div class="col-auto g-pb-10 g-pb-0--sm">
+                <i class="fa fa-phone g-font-size-18 g-valign-middle g-color-primary g-mr-10 g-mt-minus-2"></i> 1-800-GOATS
+              </div>
+
+              <div class="col-auto hidden-md-down">
+                <i class="fa fa-clock-o g-font-size-18 g-valign-middle g-color-primary g-mr-10 g-mt-minus-2"></i> Mon-Fri: 9 AM - 5 PM
+              </div>
+
+              <div class="col-auto g-pos-rel g-pb-10 g-pb-0--sm">
+                <ul class="list-inline g-overflow-hidden g-pt-1 g-mx-minus-4 mb-0">
+                  <li class="list-inline-item g-mx-4">
+                  </li>
+                  <li class="list-inline-item g-mx-4">
+                    <a class="g-color-white g-color-primary--hover g-text-underline--none--hover" href="page-login-1.html">Login</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-auto">
+
+                <!-- Basket -->
+                <div class="u-basket d-inline-block g-valign-middle g-pt-2">
+                  <a href="#" id="basket-bar-invoker" class="u-icon-v1 g-color-white g-text-underline--none--hover g-width-20 g-height-20 g-mr-40"
+                     aria-controls="basket-bar"
+                     aria-haspopup="true"
+                     aria-expanded="false"
+                     data-dropdown-event="hover"
+                     data-dropdown-target="#basket-bar"
+                     data-dropdown-type="css-animation"
+                     data-dropdown-duration="300"
+                     data-dropdown-hide-on-scroll="false"
+                     data-dropdown-animation-in="fadeIn"
+                     data-dropdown-animation-out="fadeOut">
+                    <span class="u-badge-v1--sm g-color-white g-bg-primary g-rounded-50x">1</span>
+                    <i class="fa fa-shopping-cart"></i>
+                  </a>
+
+                  <div id="basket-bar" class="u-basket__bar u-dropdown--css-animation u-dropdown--hidden g-text-transform-none g-bg-black g-brd-top g-brd-2 g-brd-primary g-color-main g-mt-13"
+                       aria-labelledby="basket-bar-invoker">
+                    <div class="js-scrollbar g-height-280">
+                      <!-- Product -->
+                      <div class="u-basket__product g-brd-white-opacity-0_1">
+                        <div class="row align-items-center no-gutters">
+                          <div class="col-4 g-pr-20">
+                            <a href="#" class="u-basket__product-img"><img src="../assets/img-temp/150x150/img1.jpg" alt="Image Description"></a>
+                          </div>
+
+                          <div class="col-8">
+                            <h6 class="g-font-weight-600 g-mb-0">
+                              <a href="#" class="g-color-white g-color-white--hover g-text-underline--none--hover">Black Goat</a>
+                            </h6>
+                            <small class="g-color-gray-dark-v5 g-font-size-14">1 x $400.00</small>
+                          </div>
+                        </div>
+                        <button class="u-basket__product-remove" type="button">&times;</button>
+                      </div>
+                      <!-- End Product -->
+
+                      <!-- End Product -->
+                    </div>
+
+                    <div class="g-brd-top g-brd-white-opacity-0_1 g-pa-15 g-pb-20">
+                      <div class="d-flex flex-row align-items-center justify-content-between g-letter-spacing-1 g-font-size-16 g-mb-15">
+                        <strong class="text-uppercase g-font-weight-600 g-color-white">Subtotal</strong>
+                        <strong class="g-color-primary g-font-weight-600">$1200.00</strong>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center justify-content-between g-font-size-18">
+                        <a href="#" class="btn u-btn-outline-primary rounded-0 g-width-120">View Cart</a>
+                        <a href="page-checkout-1.html" class="btn u-btn-primary rounded-0 g-width-120">Checkout</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Basket -->
+
+                <!-- Search -->
+
+                  <!-- End Search Form -->
+                </div>
+                <!-- End Search -->
+              </div>
+            </div>
+          </div>
+        <!-- End Top Bar -->
+        <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
+          <nav class="js-mega-menu navbar navbar-toggleable-md">
+            <div class="container">
+              <!-- Responsive Toggle Button -->
+              <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-right-0" type="button"
+                      aria-label="Toggle navigation"
+                      aria-expanded="false"
+                      aria-controls="navBar"
+                      data-toggle="collapse"
+                      data-target="#navBar">
+                <span class="hamburger hamburger--slider">
+                  <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                  </span>
+                </span>
+              </button>
+              <!-- End Responsive Toggle Button -->
+
+              <!-- Logo -->
+              <a href="index.html" class="navbar-brand">
+                <img src="http://icons.iconarchive.com/icons/martin-berube/square-animal/96/Goat-icon.png" alt="GoatLogo">
+              </a>
+              <!-- End Logo -->
+
+              <!-- Navigation -->
+              <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg" id="navBar">
+                <ul class="navbar-nav text-uppercase g-font-weight-600 ml-auto">
+                  <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                    <a href="index.html" class="nav-link g-px-0">Home</a>
+                  </li>
+
+                  <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl">
+                    <a id="nav-link--pages" class="nav-link g-px-0" href="#"
+                       aria-haspopup="true"
+                       aria-expanded="false"
+                       aria-controls="nav-submenu--pages">Pages</a>
+
+                    <!-- Submenu -->
+                    <ul class="hs-sub-menu list-unstyled g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-py-7 g-mt-22 g-mt-12--lg--scrolling" id="nav-submenu--pages"
+                        aria-labelledby="nav-link--pages">
+                      <li class="dropdown-item"><a class="nav-link" href="#">List Filter</a></li>
+                      <li class="dropdown-item"><a class="nav-link" href="#">Product</a></li>
+                      <li class="dropdown-item"><a class="nav-link" href="page-checkout-1.html">Checkout</a></li>
+                      <li class="dropdown-item"><a class="nav-link" href="page-login-1.html">Login</a></li>
+                      <li class="dropdown-item"><a class="nav-link" href="page-signup-1.html">Signup</a></li>
+                    </ul>
+                    <!-- End Submenu -->
+                  </li>
+
+                </ul>
+              </div>
+              <!-- End Navigation -->
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- End Header -->
+      <!-- Features -->
+      <!-- End Features -->
+      <!-- End Products -->
+
+      <!-- Product Blocks -->
+      <section class="container g-py-100">
+        <div class="text-center mx-auto g-max-width-600 g-mb-50">
+          <h2 class="g-color-black mb-4">Our Catalog</h2>
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+
+        <div class="row g-mx-minus-10 g-mb-50">
+          <div class="col-md-6 col-lg-4 g-px-10">
+            <!-- Article -->
+            <article class="media g-brd-around g-brd-gray-light-v4 g-bg-white rounded g-pa-10 g-mb-20">
+              <!-- Article Image -->
+              <div class="g-max-width-100 g-mr-15">
+                <img class="d-flex w-100" src="assets/img-temp/150x150/img1.jpg" alt="Image Description">
+              </div>
+              <!-- End Article Image -->
+
+              <!-- Article Info -->
+              <div class="media-body align-self-center">
+                <h4 class="h5 g-mb-7">
+                  <a class="g-color-black g-color-primary--hover g-text-underline--none--hover" href="#">Schnoodle</a>
+                </h4>
+                <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10" href="#">Accessories</a>
+                <!-- End Article Info -->
+
+                <!-- Article Footer -->
+                  <span class="g-color-black g-line-height-1">$22.00</span>
+                  <ul class="list-inline g-color-gray-light-v2 g-font-size-14 g-line-height-1">
+                    <li class="list-inline-item align-middle g-brd-right g-brd-gray-light-v3 g-pr-10 g-mr-6">
+                      <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Cart"
+                         data-toggle="tooltip"
+                         data-placement="top">
+                        <i class="icon-finance-100 u-line-icon-pro"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item align-middle">
+                      <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Wishlist"
+                         data-toggle="tooltip"
+                         data-placement="top">
+                        <i class="icon-medical-022 u-line-icon-pro"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </footer>
+                <!-- End Article Footer -->
+              </div>
+            </article>
+            <!-- End Article -->
+          </div>
+
+          <div class="col-md-6 col-lg-4 g-px-10">
+            <!-- Article -->
+            <article class="media g-brd-around g-brd-gray-light-v4 g-bg-white rounded g-pa-10 g-mb-20">
+              <!-- Article Image -->
+              <div class="g-max-width-100 g-mr-15">
+                <img class="d-flex w-100" src="assets/img-temp/150x150/img2.jpg" alt="Image Description">
+              </div>
+              <!-- End Article Image -->
+
+              <!-- Article Info -->
+              <div class="media-body align-self-center">
+                <h4 class="h5 g-mb-7">
+                  <a class="g-color-black g-color-primary--hover g-text-underline--none--hover" href="#">Goatie Gloves</a>
+                </h4>
+                <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10" href="#">Accessories</a>
+                <!-- End Article Info -->
+
+                <!-- Article Footer -->
+                <footer class="d-flex justify-content-between g-font-size-16">
+                  <span class="g-color-black g-line-height-1">$55.00</span>
+                  <ul class="list-inline g-color-gray-light-v2 g-font-size-14 g-line-height-1">
+                    <li class="list-inline-item align-middle g-brd-right g-brd-gray-light-v3 g-pr-10 g-mr-6">
+                      <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Cart"
+                         data-toggle="tooltip"
+                         data-placement="top">
+                        <i class="icon-finance-100 u-line-icon-pro"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item align-middle">
+                      <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Wishlist"
+                         data-toggle="tooltip"
+                         data-placement="top">
+                        <i class="icon-medical-022 u-line-icon-pro"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </footer>
+                <!-- End Article Footer -->
+              </div>
+            </article>
+            <!-- End Article -->
+          </div>
+
+          <div class="col-md-6 col-lg-4 g-px-10">
+            <!-- Article -->
+            <article class="media g-brd-around g-brd-gray-light-v4 g-bg-white rounded g-pa-10 g-mb-20">
+              <!-- Article Image -->
+              <div class="g-max-width-100 g-mr-15">
+                <img class="d-flex w-100" src="assets/img-temp/150x150/img3.jpg" alt="Image Description">
+              </div>
+              <!-- End Article Image -->
+
+              <!-- Article Info -->
+              <div class="media-body align-self-center">
+                <h4 class="h5 g-mb-7">
+                  <a class="g-color-black g-color-primary--hover g-text-underline--none--hover" href="#">Goatie Shoes</a>
+                </h4>
+                <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10" href="#">Goatie Footwear</a>
+                <!-- End Article Info -->
+
+                <!-- Article Footer -->
+                <footer class="d-flex justify-content-between g-font-size-16">
+                  <span class="g-color-black g-line-height-1">$55.00</span>
+                  <ul class="list-inline g-color-gray-light-v2 g-font-size-14 g-line-height-1">
+                    <li class="list-inline-item align-middle g-brd-right g-brd-gray-light-v3 g-pr-10 g-mr-6">
+                      <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Cart"
+                         data-toggle="tooltip"
+                         data-placement="top">
+                        <i class="icon-finance-100 u-line-icon-pro"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item align-middle">
+                      <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Wishlist"
+                         data-toggle="tooltip"
+                         data-placement="top">
+                        <i class="icon-medical-022 u-line-icon-pro"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </footer>
+                <!-- End Article Footer -->
+              </div>
+            </article>
+            <!-- End Article -->
+          </div>
+
+          <div class="col-md-6 col-lg-4 g-px-10">
+            <!-- Article -->
+            <article class="media g-brd-around g-brd-gray-light-v4 g-bg-white rounded g-pa-10 g-mb-20">
+              <!-- Article Image -->
+              <div class="g-max-width-100 g-mr-15">
+                <img class="d-flex w-100" src="assets/img-temp/150x150/img4.jpg" alt="Image Description">
+              </div>
+              <!-- End Article Image -->
+
+              <!-- Article Info -->
+              <div class="media-body align-self-center">
+                <h4 class="h5 g-mb-7">
+                  <a class="g-color-black g-color-primary--hover g-text-underline--none--hover" href="#">Goatie Shoes</a>
+                </h4>
+                <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10" href="#">Footwear</a>
+                <!-- End Article Info -->
+
+                <!-- Article Footer -->
+                <footer class="d-flex justify-content-between g-font-size-16">
+                  <span class="g-color-black g-line-height-1">$55.00</span>
+                  <ul class="list-inline g-color-gray-light-v2 g-font-size-14 g-line-height-1">
+                    <li class="list-inline-item align-middle g-brd-right g-brd-gray-light-v3 g-pr-10 g-mr-6">
+                      <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Cart"
+                         data-toggle="tooltip"
+                         data-placement="top">
+                        <i class="icon-finance-100 u-line-icon-pro"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item align-middle">
+                      <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Wishlist"
+                         data-toggle="tooltip"
+                         data-placement="top">
+                        <i class="icon-medical-022 u-line-icon-pro"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </footer>
+                <!-- End Article Content -->
+              </div>
+            </article>
+            <!-- End Article -->
+          </div>
+
+          <div class="col-md-6 col-lg-4 g-px-10">
+            <!-- Article -->
+            <article class="media g-brd-around g-brd-gray-light-v4 g-bg-white rounded g-pa-10 g-mb-20">
+              <!-- Article Image -->
+              <div class="g-max-width-100 g-mr-15">
+                <img class="d-flex w-100" src="assets/img-temp/150x150/img5.jpg" alt="Image Description">
+              </div>
+              <!-- End Article Image -->
+
+              <!-- Article Info -->
+              <div class="media-body align-self-center">
+                <h4 class="h5 g-mb-7">
+                  <a class="g-color-black g-color-primary--hover g-text-underline--none--hover" href="#">Tum Tum</a>
+                </h4>
+                <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10" href="#">Footwear</a>
+                <!-- End Article Info -->
+
+                <!-- Article Footer -->
+                <footer class="d-flex justify-content-between g-font-size-16">
+                  <span class="g-color-black g-line-height-1">$55.00</span>
+                  <ul class="list-inline g-color-gray-light-v2 g-font-size-14 g-line-height-1">
+                    <li class="list-inline-item align-middle g-brd-right g-brd-gray-light-v3 g-pr-10 g-mr-6">
+                      <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Cart"
+                         data-toggle="tooltip"
+                         data-placement="top">
+                        <i class="icon-finance-100 u-line-icon-pro"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item align-middle">
+                      <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Wishlist"
+                         data-toggle="tooltip"
+                         data-placement="top">
+                        <i class="icon-medical-022 u-line-icon-pro"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </footer>
+                <!-- End Article Content -->
+              </div>
+            </article>
+            <!-- End Article -->
+          </div>
+
+          <div class="col-md-6 col-lg-4 g-px-10">
+            <!-- Article -->
+            <article class="media g-brd-around g-brd-gray-light-v4 g-bg-white rounded g-pa-10 g-mb-20">
+              <!-- Article Image -->
+              <div class="g-max-width-100 g-mr-15">
+                <img class="d-flex w-100" src="assets/img-temp/150x150/img6.jpg" alt="Image Description">
+              </div>
+              <!-- End Article Image -->
+
+              <!-- Article Info -->
+              <div class="media-body align-self-center">
+                <h4 class="h5 g-mb-7">
+                  <a class="g-color-black g-color-primary--hover g-text-underline--none--hover" href="#">Lil' Puff</a>
+                </h4>
+                <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10" href="#">Footwear</a>
+                <!-- End Article Info -->
+
+                <!-- Article Footer -->
+                <footer class="d-flex justify-content-between g-font-size-16">
+                  <span class="g-color-black g-line-height-1">$55.00</span>
+                  <ul class="list-inline g-color-gray-light-v2 g-font-size-14 g-line-height-1">
+                    <li class="list-inline-item align-middle g-brd-right g-brd-gray-light-v3 g-pr-10 g-mr-6">
+                      <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Cart"
+                         data-toggle="tooltip"
+                         data-placement="top">
+                        <i class="icon-finance-100 u-line-icon-pro"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item align-middle">
+                      <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Wishlist"
+                         data-toggle="tooltip"
+                         data-placement="top">
+                        <i class="icon-medical-022 u-line-icon-pro"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </footer>
+                <!-- End Article Footer -->
+              </div>
+            </article>
+            <!-- End Article -->
+          </div>
+
+          <div class="col-md-6 col-lg-4 g-px-10">
+            <!-- Article -->
+            <article class="media g-brd-around g-brd-gray-light-v4 g-bg-white rounded g-pa-10 g-mb-20">
+              <!-- Article Image -->
+              <div class="g-max-width-100 g-mr-15">
+                <img class="d-flex w-100" src="assets/img-temp/150x150/img7.jpg" alt="Image Description">
+              </div>
+              <!-- End Article Image -->
+
+              <!-- Article Info -->
+              <div class="media-body align-self-center">
+                <h4 class="h5 g-mb-7">
+                  <a class="g-color-black g-color-primary--hover g-text-underline--none--hover" href="#">Farm Clock</a>
+                </h4>
+                <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10" href="#">Hi-Farm</a>
+                <!-- End Article Info -->
+
+                <!-- Article Footer -->
+                <footer class="d-flex justify-content-between g-font-size-16">
+                  <span class="g-color-black g-line-height-1">$55.00</span>
+                  <ul class="list-inline g-color-gray-light-v2 g-font-size-14 g-line-height-1">
+                    <li class="list-inline-item align-middle g-brd-right g-brd-gray-light-v3 g-pr-10 g-mr-6">
+                      <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Cart"
+                         data-toggle="tooltip"
+                         data-placement="top">
+                        <i class="icon-finance-100 u-line-icon-pro"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item align-middle">
+                      <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Wishlist"
+                         data-toggle="tooltip"
+                         data-placement="top">
+                        <i class="icon-medical-022 u-line-icon-pro"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </footer>
+                <!-- End Article Footer -->
+              </div>
+            </article>
+            <!-- End Article -->
+          </div>
+
+          <div class="col-md-6 col-lg-4 g-px-10">
+            <!-- Article -->
+            <article class="media g-brd-around g-brd-gray-light-v4 g-bg-white rounded g-pa-10 g-mb-20">
+              <!-- Article Image -->
+              <div class="g-max-width-100 g-mr-15">
+                <img class="d-flex w-100" src="assets/img-temp/150x150/img8.jpg" alt="Image Description">
+              </div>
+              <!-- End Article Image -->
+
+              <!-- Article Info -->
+              <div class="media-body align-self-center">
+                <h4 class="h5 g-mb-7">
+                  <a class="g-color-black g-color-primary--hover g-text-underline--none--hover" href="#">Lorem Farm</a>
+                </h4>
+                <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10" href="#">Hi-Tech</a>
+                <!-- End Article Info -->
+
+                <!-- Article Footer -->
+                <footer class="d-flex justify-content-between g-font-size-16">
+                  <span class="g-color-black g-line-height-1">$55.00</span>
+                  <ul class="list-inline g-color-gray-light-v2 g-font-size-14 g-line-height-1">
+                    <li class="list-inline-item align-middle g-brd-right g-brd-gray-light-v3 g-pr-10 g-mr-6">
+                      <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Cart"
+                         data-toggle="tooltip"
+                         data-placement="top">
+                        <i class="icon-finance-100 u-line-icon-pro"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item align-middle">
+                      <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Wishlist"
+                         data-toggle="tooltip"
+                         data-placement="top">
+                        <i class="icon-medical-022 u-line-icon-pro"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </footer>
+                <!-- End Article Footer -->
+              </div>
+            </article>
+            <!-- End Article -->
+          </div>
+
+          <div class="col-md-6 col-lg-4 g-px-10">
+            <!-- Article -->
+            <article class="media g-brd-around g-brd-gray-light-v4 g-bg-white rounded g-pa-10 g-mb-20">
+              <!-- Article Image -->
+              <div class="g-max-width-100 g-mr-15">
+                <img class="d-flex w-100" src="assets/img-temp/150x150/img9.jpg" alt="Image Description">
+              </div>
+              <!-- End Article Image -->
+
+              <!-- Article Info -->
+              <div class="media-body align-self-center">
+                <h4 class="h5 g-mb-7">
+                  <a class="g-color-black g-color-primary--hover g-text-underline--none--hover" href="#">Lorem goat</a>
+                </h4>
+                <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10" href="#">Hi-Tech</a>
+                <!-- End Article Info -->
+
+                <!-- Article Footer -->
+                <footer class="d-flex justify-content-between g-font-size-16">
+                  <span class="g-color-black g-line-height-1">$55.00</span>
+                  <ul class="list-inline g-color-gray-light-v2 g-font-size-14 g-line-height-1">
+                    <li class="list-inline-item align-middle g-brd-right g-brd-gray-light-v3 g-pr-10 g-mr-6">
+                      <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Cart"
+                         data-toggle="tooltip"
+                         data-placement="top">
+                        <i class="icon-finance-100 u-line-icon-pro"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item align-middle">
+                      <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#" title="Add to Wishlist"
+                         data-toggle="tooltip"
+                         data-placement="top">
+                        <i class="icon-medical-022 u-line-icon-pro"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </footer>
+                <!-- End Article Footer -->
+              </div>
+            </article>
+            <!-- End Article -->
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a class="btn u-btn-primary g-font-size-12 text-uppercase g-py-12 g-px-25" href="#">Full Catalog</a>
+        </div>
+      </section>
+      <!-- End Product Blocks -->
+      <!-- Social Icons -->
+      <!-- End Social Icons -->
+      <!-- Footer -->
+        <!-- Content -->
+        <!-- End Content -->
+        <!-- Copyright -->
+        <!-- End Copyright -->
+      <!-- End Footer -->
+    </main>
+
+    <!-- JS Global Compulsory -->
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+    <script src="../assets/vendor/tether.min.js"></script>
+    <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+    <!-- JS Implementing Plugins -->
+    <script src="../assets/vendor/jquery.countdown.min.js"></script>
+    <script src="../assets/vendor/slick-carousel/slick/slick.js"></script>
+    <script src="../assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+    <script src="../assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- JS Unify -->
+    <script src="../assets/js/hs.core.js"></script>
+    <script src="../assets/js/components/hs.header.js"></script>
+    <script src="../assets/js/helpers/hs.hamburgers.js"></script>
+    <script src="../assets/js/components/hs.dropdown.js"></script>
+    <script src="../assets/js/components/hs.scrollbar.js"></script>
+    <script src="../assets/js/components/hs.countdown.js"></script>
+    <script src="../assets/js/components/hs.go-to.js"></script>
+
+    <!-- JS Customization -->
+    <script src="../assets/js/custom.js"></script>
+
+    <!-- JS Plugins Init. -->
+    <script>
+      $(document).on('ready', function () {
+        // initialization of header
+        $.HSCore.components.HSHeader.init($('#js-header'));
+        $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+        // initialization of HSMegaMenu component
+        $('.js-mega-menu').HSMegaMenu({
+          event: 'hover',
+          pageContainer: $('.container'),
+          breakpoint: 991
+        });
+
+        // initialization of HSDropdown component
+        $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+          afterOpen: function () {
+            $(this).find('input[type="search"]').focus();
+          }
+        });
+
+        // initialization of HSScrollBar component
+        $.HSCore.components.HSScrollBar.init($('.js-scrollbar'));
+
+        // initialization of go to
+        $.HSCore.components.HSGoTo.init('.js-go-to');
+      });
+    </script>
+
+
+    <!--  ----------------Java Script---------------- -->
+
+    <!-- <script type="text/javascript" src="/assets/js/landing.js"></script> -->
+
+    
 
