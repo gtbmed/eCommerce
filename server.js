@@ -26,7 +26,7 @@ app.use(method("_method"));
 // Static for CSS & Images
 app.use(express.static(process.cwd() + "/public"));
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({ defaultLayout: "main", helpers: require("./views/helpers/helpers.js") }));
 app.set("view engine", "handlebars");
 
 app.use("/", routes(app));
