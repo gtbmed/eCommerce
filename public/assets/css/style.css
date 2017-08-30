@@ -7,14 +7,36 @@ ul {
 list-style-type: none;
 }
 
-h1, h2, h3, p {
+h1 {
 font-family: Roboto;
 }
 
 .welcomegoat {
   text-align: center;
+  background-color: none;
 }
 
 .navgoat {
-  text-align: center;
+  padding-top: 10px;
+  color: white;
+}
+
+.goatDay {
+  border: 2px solid gray;
+}
+
+.fa-color {
+  color: #3bb18f;
+}
+
+.btn-success {
+background-image: linear-gradient(to bottom,#3bb18f 0,#3bb18f 100%);
+border-color: #3bb18f;
+}
+
+.goatback {
+  background-color: #3bb18f;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
