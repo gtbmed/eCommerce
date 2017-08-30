@@ -18,6 +18,14 @@ module.exports = function(sequelize, Datatypes) {
 		});
 	};
 
+	Transaction.associate = function(models) {
+		Transaction.belongsTo(models.User, {
+			foreignKey: {
+				allowNull: false
+			}
+		});
+	};
+
 
 	return Transaction;
 };
