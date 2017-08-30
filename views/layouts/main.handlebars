@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    {{{_sections.head}}}
-  </head>
+<head>
+ <meta charset="utf-8">
+    <!-- Favicon -->
+  <link rel="shortcut icon" href="../favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<!-- Bootstrap -->
+<!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link
+</head>
   <body>
-    {{!-- <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class href="#">G</a>
+          <a class href="#">
+            <img alt="Trader Goat's" src="../favicon.ico">
+          </a>
         </div>
 
         <div class="nav navbar-nav">
           <ul class="nav navbar-nav">
-            <li><a href="#">Buy</a></li>
-            <li><a href="#">Sell</a></li>
             <li><a href="/goats">Goats</a></li>
             <li><a href="/members">Members</a><li>
-            <li><a href="/goatsCat">Goats Catalog</a>
+            <li><a href="/goatsCat">Goat Catalog</a>
           </ul>
-          <a href="/signup"><button type="button" class="btn btn-default navbar-btn">Sign in</button></a>
+          <a href="/login"><button type="button" class="btn btn-default navbar-btn">Sign in</button></a>
         </div>
       </div>
     </nav>
-    <br/><br/><br/> --}}
+    <br/><br/><br/>
+    <div class="container-fluid">
     {{{body}}}
+    </div>
   </body>
 </html>
