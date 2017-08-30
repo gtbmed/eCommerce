@@ -93,20 +93,16 @@ module.exports = function(app) {
         });
     });
 
+    router.post("/transactions", function(req, res) {
+        db.Transaction.create({
 
+            MemberId: req.body.MemberId,
+            GoatId: req.body.goatId
 
-
-
-//     router.post("/transactions", function(req, res) {
-//         db.Transaction.create({
-
-//             MemberId: req.body.MemberId,
-//             GoatId: req.body.goatId
- 
-//             }).then(function(data) {                
-//                 res.redirect("/transaction");
-//             })
-//     });
+            }).then(function(data) {                
+                res.redirect("/transaction");
+            })
+    });
 
 
     router.post("/transactions", function(req, res) {
@@ -118,7 +114,7 @@ module.exports = function(app) {
 
             }).then(function(data) {
                 
-                res.redirect("/transactions");
+               // res.redirect("/thankyou");
             })
     });
 
