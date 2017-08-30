@@ -1,17 +1,16 @@
-	 <h1> Passing goat id to transactions </h1>
+   <h1> Passing goat id to transactions </h1>
 
-     <p> Id passed : {{ goats.id }} </p>
+     <p> Id passed : {{ output }} </p>
 
 
-		<tbody>
+
             {{#each goats}} 
-                <tr>
-                 <form method="POST" action="/transactions:id">
-                <form action ="/goatsCat/{{id}}" method="post">
-                  <td>{{id}}</td>
-                </tr>
+                <h3> Selected Goat </h3>
+                <p> Id : {{id}}</p>
+                <p> Name : {{goat_name}}</p>
+                <p> price : {{goat_price}} </p>
             {{/each}}
-        </tbody>
+
 
         <h1> Add Member Details </h1>
 
