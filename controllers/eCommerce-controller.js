@@ -93,30 +93,45 @@ module.exports = function(app) {
         });
     });
 
-    router.post("/transactions", function(req, res) {
-        db.Transaction.create({
-
-            MemberId: req.body.MemberId,
-            GoatId: req.body.goatId
-
-            }).then(function(data) {                
-                res.redirect("/transaction");
-            })
-    });
-
-
-    router.post("/transactions", function(req, res) {
+    router.post("/memAddTrans", function(req, res) {
         db.Member.create({
 
             member_name: req.body.member_name,
             credit_card: req.body.credit_card,
-            address: req.body.address
+            address: req.body.address,
+            UserId: 1
 
-            }).then(function(data) {
-                
-               // res.redirect("/thankyou");
+            }).then(function(data) {                
+               res.redirect("/transaction");
             })
     });
+
+    router.post("/transDone", function(req, res) {
+        db.Transaction.create({
+
+            MemberId: 1,
+            GoatId: 1
+
+            }).then(function(data) {                
+                res.redirect("/cart");
+            })
+    });
+
+    router.get('/cart', function(req,res,next){
+        db.Transaction.findAll({
+        })
+        .then(function(data){
+            var transObject = {
+                transactions: data
+            };
+            return res.render('cart', transObject);
+            }).catch(function(err) {
+                res.json(err)
+        });
+    });
+
+
+
 
 
 
@@ -132,7 +147,7 @@ module.exports = function(app) {
                 var memberObject = {
                     members: data
                 };
-            return res.render('members', memberObject);
+            return res.render('memDetails', memberObject);
             }).catch(function(err) {
             res.json(err)
         });
@@ -148,7 +163,7 @@ module.exports = function(app) {
 
             }).then(function(data) {
                 
-                res.redirect("/members");
+                res.redirect("/memDetails");
             })
     });
 
@@ -263,26 +278,25 @@ module.exports = function(app) {
 // Admin Page
 // --------------------------------------------------
 
- router.get('/admin', function(req,res) {
+ router.get('/admins', function(req,res) {
         db.Transaction.findAll({
-            include: [
-                  {
-                    model: db.Goat,
-                    required: true
-                  }, 
-                  {
-                    model: db.Member,
-                    required: true
-                  }
-                ],
-            where: {createdAt: {$between: [2017-08-20, 2017-08-30]}}
+            // include: [
+            //       {
+            //         model: db.Goat,
+            //         required: false
+            //       }, 
+            //       {
+            //         model: db.Member,
+            //         required: false
+            //       }
+            //     ]//,
+            //where: {createdAt: {$between: [2017-08-20, 2017-08-30]}}
             
-        })
-                .then(function(data){
+        }).then(function(data){
                 var transObject = {
-                    goats: data
+                    transactions: data
                 };
-            return res.render('admin', transObject);
+            return res.render('admins', transObject);
             }).catch(function(err) {
             res.json(err)
         });
