@@ -17,7 +17,6 @@
               <tr>
               {{#each goats}}
               {{#unless this.goat_sold}}
-
                   <td>{{this.goat_name}}</td>
                   <td>{{goat_color}}</td>
                   <td>{{goat_sex}}</td>
@@ -29,15 +28,11 @@
                       <button type="submit" name={{id}} id={{id}}>Buy Now</button>
                   </form>
                   </td>
-
-
-                {{/unless}}
-                {{/each}}
-
                 </tr>
+              {{/unless}}
+              {{/each}}
+
+
 
         </tbody>
     </table>
-
-
-
