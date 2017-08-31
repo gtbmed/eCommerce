@@ -182,13 +182,10 @@ module.exports = function(app) {
 // --------------------------------------------------
 // Login Page
 // --------------------------------------------------
-    
-    // Retreive goat data for transaction page
+
+    // Retreive User data for loginMems page
     router.get('/loginMems', function(req,res,next){
         db.User.findAll({
-            // where: {
-            //     id: req.params.id
-            // }
         })
         .then(function(data){
             var userObject = {
@@ -200,49 +197,96 @@ module.exports = function(app) {
         });
     });
 
-
-    // Login  
-    router.get('/returnMems/:email', function(req,res) {
-        db.User.findOne({
-             where: {
-                email: req.params.email
-            }
-        }).then(function(data){
-                var userLogsObject = {
-                    // if(email != null){
-                        
-                    // }
-                };
-            //return res.render('loginMems', userLogsObject);
-            res.redirect('/returnMems/' + req.params.email);
-            }).catch(function(err) {
-            res.json(err)
-        });
+    router.post('/loginMems/submit/:email', function(req,res,next){
+        var email = req.params.email;
+        console.log("id is : " + email);
+        console.log("............................." + email);
+        res.redirect('/loginMems/' + email);
     });
 
-    // signup     
-    router.post("/signUpMems", function(req, res) {
-        db.User.create({
-            email: req.body.nemail,
-            password: req.body.npassword,
-            }).then(function(data) {                
-                res.redirect("/loginMems");
-            });        
-    });
+    
 
-    // router.get('/loginMems', function(req,res) {
+
+
+    ////////////////////
+    
+    // // Retreive goat data for transaction page
+    // router.get('/loginMems', function(req,res,next){
     //     db.User.findAll({
+    //         // where: {
+    //         //     id: req.params.id
+    //         // }
+    //     })
+    //     .then(function(data){
+    //         var userObject = {
+    //             users: data
+    //         };
+    //         return res.render('loginMems', userObject);
+    //         }).catch(function(err) {
+    //             res.json(err)
+    //     });
+    // });
+
+
+    // // Login  
+    // router.get('/returnMems/:email', function(req,res) {
+    //     db.User.findOne({
+    //          where: {
+    //             email: req.params.email
+    //         }
     //     }).then(function(data){
     //             var userLogsObject = {
-    //                 users: data
+    //                 // if(email != null){
+
+    //                 // }
     //             };
-    //         return res.render('loginMems', userLogsObject);
+    //         //return res.render('loginMems', userLogsObject);
+    //         res.redirect('/goatsCat');
     //         }).catch(function(err) {
     //         res.json(err)
     //     });
     // });
 
+    // // signup     
+    // router.post("/signUpMems", function(req, res) {
+    //     db.User.create({
+    //         email: req.body.nemail,
+    //         password: req.body.npassword,
+    //         }).then(function(data) {                
+    //             res.redirect("/goatsCat");
+    //         });        
+    // });
 
+
+
+// --------------------------------------------------
+// Admin Page
+// --------------------------------------------------
+
+ router.get('/admin', function(req,res) {
+        db.Transaction.findAll({
+            include: [
+                  {
+                    model: db.Goat,
+                    required: true
+                  }, 
+                  {
+                    model: db.Member,
+                    required: true
+                  }
+                ],
+            where: {createdAt: {$between: [2017-08-20, 2017-08-30]}}
+            
+        })
+                .then(function(data){
+                var transObject = {
+                    goats: data
+                };
+            return res.render('admin', transObject);
+            }).catch(function(err) {
+            res.json(err)
+        });
+    });
 
 
 
