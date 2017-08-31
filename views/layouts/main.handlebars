@@ -28,12 +28,22 @@
         </div>
 
         <div class="nav navbar-nav">
+
           <ul class="nav navbar-nav">
             <li><a href="/goats">Goats</a></li>
             <li><a href="/members">Members</a><li>
             <li><a href="/goatsCat">Goat Catalog</a>
           </ul>
-          <a href="/login"><button type="button" class="btn btn-default navbar-btn">Sign in</button></a>
+          
+          <!-- Login Info -->
+          <div id = "logIn">
+            <a href="/loginMems"><button type="button" class="btn btn-default navbar-btn">Log In</button></a>
+          </div>
+
+          <div id = "memId">
+            <p>Welcome </p><h4 id = "user"></h4>
+          </div>
+
         </div>
       </div>
     </nav>
@@ -41,5 +51,39 @@
     <div class="container-fluid">
     {{{body}}}
     </div>
+
+    <!-- script for login -->
+
+    <script type="text/javascript">
+        
+      $(document).ready(function(){
+          $("#memId").hide();
+
+
+        function loginSettings() {
+
+          var id = $("#logedInId").val();
+          var email = $("#logedInEmail");
+          $("#user").text(email);
+
+          console.log("Login Data : " + email);
+
+          if ( id != null){
+            $("#logIn").hide();
+            $("#memId").show();
+          } else {
+            $("#memId").hide();
+            $("#LogIn").show();
+          }
+
+        }
+          window.onload = loginSettings;
+
+      });
+
+          
+
+    </script>
+
   </body>
 </html>
