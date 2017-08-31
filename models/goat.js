@@ -44,5 +44,13 @@ module.exports = function(sequelize, DataTypes) {
 	    }
 	});
 
+	Goat.associate = function(models) {
+		Goat.hasMany(models.Transaction, {
+			foreignKey: {
+				allowNull: true
+			}
+		});
+	};
+
 	return Goat;
 };

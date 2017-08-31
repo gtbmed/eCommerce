@@ -22,5 +22,21 @@ module.exports = function(sequelize, DataTypes) {
     }    
   });
 
+  Member.associate = function(models) {
+      Member.belongsTo(models.User, {
+        foreignKey: {
+        allowNull: true
+      }
+      });
+  };
+
+  Member.associate = function(models) {
+    Member.hasMany(models.Transaction, {
+      foreignKey: {
+        allowNull: true
+      }
+    });
+  };
+
   return Member;
 };
