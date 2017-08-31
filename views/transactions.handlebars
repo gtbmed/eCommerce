@@ -14,7 +14,7 @@
 
           <h1> Add Member Details </h1>
 
-          <form action="/transactions" method="post">
+          <form action="/memAddTrans" method="post">
             <div class="form-group">
               <label for="member_name"> Member Name </label>
               <input type="text" class="form-control" name="member_name" placeholder=" Donald Trump" id="enName">
@@ -40,6 +40,7 @@
 
 <!-- /////////////////////////////////////////////////////////////////////////////// -->
 
+
         <div id="memberData">
             Shipping Name : <div id="adName"></div>
             Credit Card Number : <div id="adCredit"></div>
@@ -49,6 +50,7 @@
             <input type="hidden" name=UserId id="Uid">
             <input type="hidden" name=MemId id="Mid">
             <input type="hidden" name=GoatId id="Gid">
+
             <button class="btn btn-success btn-xs" type="submit" id ="transSubmit">Finalize the Transaction</button>
           </form>
         </div>
@@ -59,9 +61,15 @@
         <script type="text/javascript">
 
         $(document).ready(function(){
+
+          $( window ).load(function() {
             $("#memberData").hide();
+          };
+
             $("#memberSubmit").on("click",function(){
+
                 console.log("Member Data Submitted");
+                
                 $("#memberData").show();
                 $("#enterMember").hide();
                 $("#adName").text($("#enName").val());
@@ -69,7 +77,8 @@
                 $("#adAdd").text($("#enAdd").val());
                 $("#Uid").name = "5";
                 $("#Mid").name = "4";
-                $("#Gid").name =
+                $("#Gid").name = "2";
+
             });
         });
 
