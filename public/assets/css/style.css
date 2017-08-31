@@ -35,7 +35,6 @@ font-family: Roboto;
 .goatDayborder {
   border: 2px solid white;
   outline: 2px solid gray;
-  float: right;
 }
 
 .fa-color {
