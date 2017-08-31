@@ -45,12 +45,21 @@
             <li class="goatPhone"><i class="fa fa-phone fa-color"></i> 1-800-GOATS</li>
             <li class="goatPhone"><i class="fa fa-trophy fa-color" aria-hidden="true"></i> "LEAST BITEY GOATS ON THE INTERNET" - Capraphobia Magazine</li>
           </ul>
+          <!-- Login Info -->
+          <div id = "logIn">
+            <a href="/loginMems"><button type="button" class="btn btn-success navbar-btn navbar-right">Log In</button></a>
+          </div>
 
-          <ul class="nav navbar-nav navbar-right">
+          <div id = "memId">
+            <p>Welcome </p><h4 id = "user"></h4>
+          </div>
+
+        </div>
+          <!-- <ul class="nav navbar-nav navbar-right">
             <li>
               <a href="/login"><button type="button" class="btn btn-success navbar-btn navbar-right">Sign in</button></a>
             </li>
-          </ul>
+          </ul> -->
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -58,5 +67,39 @@
     <div class="container-fluid">
     {{{body}}}
     </div>
+
+    <!-- script for login -->
+
+    <script type="text/javascript">
+
+      $(document).ready(function(){
+          $("#memId").hide();
+
+
+        function loginSettings() {
+
+          var id = $("#logedInId").val();
+          var email = $("#logedInEmail");
+          $("#user").text(email);
+
+          console.log("Login Data : " + email);
+
+          if ( id != null){
+            $("#logIn").hide();
+            $("#memId").show();
+          } else {
+            $("#memId").hide();
+            $("#LogIn").show();
+          }
+
+        }
+          window.onload = loginSettings;
+
+      });
+
+
+
+    </script>
+
   </body>
 </html>

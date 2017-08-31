@@ -67,7 +67,7 @@ module.exports = function(app) {
         var id = req.params.id;
         console.log("id is : " + id);
         //res.send(id);
-        console.log("............................." + id);
+        //console.log("............................." + id);
         res.redirect('/goatsCat/' + id);
     });
 
@@ -93,20 +93,16 @@ module.exports = function(app) {
         });
     });
 
+    router.post("/transactions", function(req, res) {
+        db.Transaction.create({
 
+            MemberId: req.body.MemberId,
+            GoatId: req.body.goatId
 
-
-
-//     router.post("/transactions", function(req, res) {
-//         db.Transaction.create({
-
-//             MemberId: req.body.MemberId,
-//             GoatId: req.body.goatId
- 
-//             }).then(function(data) {                
-//                 res.redirect("/transaction");
-//             })
-//     });
+            }).then(function(data) {                
+                res.redirect("/transaction");
+            })
+    });
 
 
     router.post("/transactions", function(req, res) {
@@ -118,7 +114,7 @@ module.exports = function(app) {
 
             }).then(function(data) {
                 
-                res.redirect("/transactions");
+               // res.redirect("/thankyou");
             })
     });
 
@@ -164,6 +160,7 @@ module.exports = function(app) {
 // // Landing Page
 // // --------------------------------------------------
 
+
     // Goat of the Day
     router.get('/',function(req,res){
         db.Goat.findOne({ 
@@ -176,13 +173,75 @@ module.exports = function(app) {
             }).catch(function(err) {
             res.json(err)
         });
-    })
+    });
+
+
 
 
 
 // --------------------------------------------------
 // Login Page
 // --------------------------------------------------
+    
+    // Retreive goat data for transaction page
+    router.get('/loginMems', function(req,res,next){
+        db.User.findAll({
+            // where: {
+            //     id: req.params.id
+            // }
+        })
+        .then(function(data){
+            var userObject = {
+                users: data
+            };
+            return res.render('loginMems', userObject);
+            }).catch(function(err) {
+                res.json(err)
+        });
+    });
+
+
+    // Login  
+    router.get('/returnMems/:email', function(req,res) {
+        db.User.findOne({
+             where: {
+                email: req.params.email
+            }
+        }).then(function(data){
+                var userLogsObject = {
+                    // if(email != null){
+                        
+                    // }
+                };
+            //return res.render('loginMems', userLogsObject);
+            res.redirect('/returnMems/' + req.params.email);
+            }).catch(function(err) {
+            res.json(err)
+        });
+    });
+
+    // signup     
+    router.post("/signUpMems", function(req, res) {
+        db.User.create({
+            email: req.body.nemail,
+            password: req.body.npassword,
+            }).then(function(data) {                
+                res.redirect("/loginMems");
+            });        
+    });
+
+    // router.get('/loginMems', function(req,res) {
+    //     db.User.findAll({
+    //     }).then(function(data){
+    //             var userLogsObject = {
+    //                 users: data
+    //             };
+    //         return res.render('loginMems', userLogsObject);
+    //         }).catch(function(err) {
+    //         res.json(err)
+    //     });
+    // });
+
 
 
 

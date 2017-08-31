@@ -1,23 +1,19 @@
 
 
-  <h3> Welcome  </h3>
-
-
-
 <h2> User Loged In </h2>
 
 {{#each users}} 
 
-  <input type="hidden" id="logedInId" name = {{id}}>
-  <input type="hidden" id="logedInEmail" name = {{email}}>
-  <input type="hidden" id="logedInPass" name = {{password}}>
+	<input type="hidden" id="logedInId" name = {{id}}>
+	<input type="hidden" id="logedInEmail" name = {{email}}>
+	<input type="hidden" id="logedInPass" name = {{password}}>
 
 {{/each}}
 
 
 <h2> If you have the Login then Login </h2>
 
-          <form action="/loginMems" method="post">
+          <form action="/returnMems" method="post">
             <div class="form-group">
               <label for="member_name"> Email Address </label>
               <input type="text" class="form-control" name="email" placeholder = " andy@bcgt.com" id="email">
@@ -76,8 +72,3 @@
         });
 
         </script>
-
-
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script type="text/javascript" src="../public/js/members.js"></script>
-
