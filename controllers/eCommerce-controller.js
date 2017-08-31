@@ -1,4 +1,4 @@
-    
+
 var express = require("express");
 // Requiring path to so we can use relative routes to our HTML files
 var path = require("path");
@@ -38,10 +38,10 @@ module.exports = function(app) {
             goat_sex: req.body.goat_sex,
             goat_price: req.body.goat_price,
             picture_url: req.body.picture_url,
-            goat_sold:false    
+            goat_sold:false
 
             }).then(function(data) {
-                
+
                 res.redirect("/goats");
             })
     });
@@ -99,7 +99,7 @@ module.exports = function(app) {
             address: req.body.address,
             UserId: 1
 
-            }).then(function(data) {                
+            }).then(function(data) {
                //res.redirect("/transactions");
                res.render('transactions',{output:data})
             })
@@ -109,7 +109,7 @@ module.exports = function(app) {
         db.Transaction.create({
             MemberId: req.body.MemberId,
             GoatId: 2
-        }).then(function(data) {                
+        }).then(function(data) {
                 res.redirect("/cart");
         })
     });
@@ -153,7 +153,7 @@ module.exports = function(app) {
             address: req.body.address
 
             }).then(function(data) {
-                
+
                 res.redirect("/memDetails");
             })
     });
@@ -166,7 +166,7 @@ module.exports = function(app) {
 
     // Goat of the Day
     router.get('/',function(req,res){
-        db.Goat.findOne({ 
+        db.Goat.findOne({
             where: {id: 2} })
         .then(function(data){
                 var goatOftheDay = {
@@ -204,40 +204,40 @@ module.exports = function(app) {
         res.redirect('/loginMems/' + email);
     });
 
-    
+
 
 
 
     ////////////////////
-   
-    // // Login  
-    // router.get('/returnMems/:email', function(req,res) {
-    //     db.User.findOne({
-    //          where: {
-    //             email: req.params.email
-    //         }
-    //     }).then(function(data){
-    //             var userLogsObject = {
-    //                 // if(email != null){
 
-    //                 // }
-    //             };
-    //         //return res.render('loginMems', userLogsObject);
-    //         res.redirect('/goatsCat');
-    //         }).catch(function(err) {
-    //         res.json(err)
-    //     });
-    // });
+    // Login
+    router.get('/returnMems/:email', function(req,res) {
+        db.User.findOne({
+             where: {
+                email: req.params.email
+            }
+        }).then(function(data){
+                var userLogsObject = {
+                    // if(email != null){
 
-    // // signup     
-    // router.post("/signUpMems", function(req, res) {
-    //     db.User.create({
-    //         email: req.body.nemail,
-    //         password: req.body.npassword,
-    //         }).then(function(data) {                
-    //             res.redirect("/goatsCat");
-    //         });        
-    // });
+                    // }
+                };
+            //return res.render('loginMems', userLogsObject);
+            res.redirect('/goatsCat');
+            }).catch(function(err) {
+            res.json(err)
+        });
+    });
+
+    // signup
+    router.post("/signUpMems", function(req, res) {
+        db.User.create({
+            email: req.body.nemail,
+            password: req.body.npassword,
+            }).then(function(data) {
+                res.redirect("/goatsCat");
+            });
+    });
 
 
 
@@ -251,14 +251,14 @@ module.exports = function(app) {
             //       {
             //         model: db.Goat,
             //         required: false
-            //       }, 
+            //       },
             //       {
             //         model: db.Member,
             //         required: false
             //       }
             //     ]//,
             //where: {createdAt: {$between: [2017-08-20, 2017-08-30]}}
-            
+
         }).then(function(data){
                 var transObject = {
                     transactions: data
@@ -274,6 +274,3 @@ module.exports = function(app) {
     return router;
 
 };
-
-
-
