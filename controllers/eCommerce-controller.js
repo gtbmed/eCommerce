@@ -62,17 +62,68 @@ module.exports = function(app) {
         });
     });
 
-    // Retreive goat data
-    router.get('/goatsCat/:id', function(req,res,next){
-        res.render('goatsCat',{output: req.params.id});
+
+    router.post('/goatsCat/submit/:id', function(req,res,next){
+        var id = req.params.id;
+        console.log("id is : " + id);
+        //res.send(id);
+        console.log("............................." + id);
+        res.redirect('/goatsCat/' + id);
     });
 
-    router.post('/transactions/:id', function(req,res,next){
-        var id = req.body.id;
-        console.log(req);
-        //res.redirect('/goatsCat/' + id);
-        res.redirect('transactions',req.params.id);
+
+// --------------------------------------------------
+// Transaction Page
+// --------------------------------------------------
+
+    // Retreive goat data for transaction page
+    router.get('/goatsCat/:id', function(req,res,next){
+        db.Goat.findAll({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(data){
+            var goatObject = {
+                goats: data
+            };
+            return res.render('transactions', goatObject);
+            }).catch(function(err) {
+                res.json(err)
+        });
     });
+
+
+
+
+
+//     router.post("/transactions", function(req, res) {
+//         db.Transaction.create({
+
+//             MemberId: req.body.MemberId,
+//             GoatId: req.body.goatId
+ 
+//             }).then(function(data) {                
+//                 res.redirect("/transaction");
+//             })
+//     });
+
+
+    router.post("/transactions", function(req, res) {
+        db.Member.create({
+
+            member_name: req.body.member_name,
+            credit_card: req.body.credit_card,
+            address: req.body.address
+
+            }).then(function(data) {
+                
+                res.redirect("/transactions");
+            })
+    });
+
+
+
 
 
 // --------------------------------------------------
@@ -106,83 +157,12 @@ module.exports = function(app) {
     });
 
 
-// --------------------------------------------------
-// Transaction Page
-// --------------------------------------------------
-
-
-    // router.get('/transaction', function(req,res) {
-    //     db.Transaction.findAll({ include: [{ all: true }]})
-    //             .then(function(data){
-    //             var transObject = {
-    //                 transactions: data
-    //             };
-    //         return res.render('transaction', transObject);
-    //         }).catch(function(err) {
-    //         res.json(err)
-    //     });
-    // });
 
 
 
-
-
-    // router.get('/transactions', function(req,res) {
-    //     db.Goat.findAll({})
-    //             .then(function(data){
-    //             var goatObject = {
-    //                 goats: data
-    //             };
-    //         return res.render('goats', goatObject);
-    //         }).catch(function(err) {
-    //         res.json(err)
-    //     });
-    // });
-
-    // router.get('/transactions', function(req,res) {
-    //     db.Member.findAll({})
-    //             .then(function(data){
-    //             var memberObject = {
-    //                 members: data
-    //             };
-    //         return res.render('members', memberObject);
-    //         }).catch(function(err) {
-    //         res.json(err)
-    //     });
-    // });
-
-    router.post("/transactions", function(req, res) {
-        db.Transaction.create({
-
-            MemberId: req.body.MemberId,
-            GoatId: req.body.goatId
- 
-            }).then(function(data) {                
-                res.redirect("/transaction");
-            })
-    });
-
-
-    router.post("/transactions", function(req, res) {
-        db.Member.create({
-
-            member_name: req.body.member_name,
-            credit_card: req.body.credit_card,
-            address: req.body.address
-
-            }).then(function(data) {
-                
-                res.redirect("/transactions");
-            })
-    });
-
-
-
-
-
-// --------------------------------------------------
-// Landing Page
-// --------------------------------------------------
+// // --------------------------------------------------
+// // Landing Page
+// // --------------------------------------------------
 
     // Goat of the Day
     router.get('/',function(req,res){
@@ -205,17 +185,6 @@ module.exports = function(app) {
 // --------------------------------------------------
 
 
-    // router.get('/signup', function(req,res) {
-    //     db.User.findAll({})
-    //             .then(function(data){
-    //             var userObject = {
-    //                 users: data
-    //             };
-    //         return res.render('users', userObject);
-    //         }).catch(function(err) {
-    //         res.json(err)
-    //     });
-    // });
 
 
     return router;

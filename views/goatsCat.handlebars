@@ -1,7 +1,5 @@
 <div class="container-fluid">
 
-
-
       <h2> Goats List </h2>
 
       <table class="table table-hover">
@@ -15,20 +13,31 @@
           </tr>
         </thead>
         <tbody>
-            {{#each goats}} 
+
+              <tr>
+              {{#each goats}} 
               {{#unless this.goat_sold}}
-                <tr>
+
                   <td>{{this.goat_name}}</td>
                   <td>{{goat_color}}</td>
                   <td>{{goat_sex}}</td>
                   <td>{{goat_price}}</td>
                   <td><img src = {{picture_url}} width="100px" height ="100px"></td>
+                  <td><input </td>
+
                   <td>
-                    <form action="/goatsCat/submit" method="post">
+
+                  <form action="/goatsCat/submit/{{id}}" method="post">
+                      <input type="hidden" name="{{id}}" id="id">
                       <button type="submit" name={{id}} id={{id}}>Buy Now</button>
+                  </form>
                   </td>
+
+
+                {{/unless}}
+                {{/each}}
+
                 </tr>
-              {{/unless}}
-            {{/each}}
+
         </tbody>
     </table>
