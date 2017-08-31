@@ -66,8 +66,6 @@ module.exports = function(app) {
     router.post('/goatsCat/submit/:id', function(req,res,next){
         var id = req.params.id;
         console.log("id is : " + id);
-        //res.send(id);
-        //console.log("............................." + id);
         res.redirect('/goatsCat/' + id);
     });
 
@@ -102,19 +100,18 @@ module.exports = function(app) {
             UserId: 1
 
             }).then(function(data) {                
-               res.redirect("/transaction");
+               //res.redirect("/transactions");
+               res.render('transactions',{output:data})
             })
     });
 
     router.post("/transDone", function(req, res) {
         db.Transaction.create({
-
-            MemberId: 1,
-            GoatId: 1
-
-            }).then(function(data) {                
+            MemberId: req.body.MemberId,
+            GoatId: 2
+        }).then(function(data) {                
                 res.redirect("/cart");
-            })
+        })
     });
 
     router.get('/cart', function(req,res,next){
@@ -129,12 +126,6 @@ module.exports = function(app) {
                 res.json(err)
         });
     });
-
-
-
-
-
-
 
 
 // --------------------------------------------------
@@ -168,9 +159,6 @@ module.exports = function(app) {
     });
 
 
-
-
-
 // // --------------------------------------------------
 // // Landing Page
 // // --------------------------------------------------
@@ -189,9 +177,6 @@ module.exports = function(app) {
             res.json(err)
         });
     });
-
-
-
 
 
 // --------------------------------------------------
@@ -224,25 +209,7 @@ module.exports = function(app) {
 
 
     ////////////////////
-    
-    // // Retreive goat data for transaction page
-    // router.get('/loginMems', function(req,res,next){
-    //     db.User.findAll({
-    //         // where: {
-    //         //     id: req.params.id
-    //         // }
-    //     })
-    //     .then(function(data){
-    //         var userObject = {
-    //             users: data
-    //         };
-    //         return res.render('loginMems', userObject);
-    //         }).catch(function(err) {
-    //             res.json(err)
-    //     });
-    // });
-
-
+   
     // // Login  
     // router.get('/returnMems/:email', function(req,res) {
     //     db.User.findOne({
