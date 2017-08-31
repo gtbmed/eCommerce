@@ -1,16 +1,31 @@
-	<h2> Goat of the Day </h2>
+<div class="container">
+	<div class="row">
+		<div class="jumbotron welcomegoat">
+			<h1>Welcome to Trader Goat's</h1>
+			<p>Trader Goat's is the world best place to find your furry, shrub-eating friend/lawnmower!</p>
+		</div>
+	</div>
+	<!-- <div class="row">
+		<div class="col-md-6 col-md-offset-3 text-center"> <h2>NEW MEMBERS GET 50% MORE GOAT!</h2>
+		</div> -->
+	</div>
+	<div class="row">
+		<div class="jumbotron goatDay">
+			<h2> Goat of the Day </h2>
 
-	<h3>{{goats.goat_name}}</h3>
+			<h3>{{goats.goat_name}}</h3>
 
-	<img src = {{goats.picture_url}} width="300px" height ="300px">
-	<ul>
+				<img src = {{goats.picture_url}} width="300px" height ="300px">
+				<ul>
+					<li>Gender : {{goats.goat_sex}}</li>
+					<li><label value = {{goats.goat_sex}} id ="gender"></label></li>
 
-	<li>Gender : {{goats.goat_sex}}</li>
-	<li><label value = {{goats.goat_sex}} id ="gender"></label></li>
-
-    <li>Color  : {{goats.goat_color}} </li>
-    <li>Price  : $ {{goats.goat_price}} </li>
-    </ul>
+					<li>Color  : {{goats.goat_color}} </li>
+					<li>Price  : $ {{goats.goat_price}} </li>
+				</ul>
+		</div>
+	</div>
+</div>
 
     <!--  ----------------Java Script---------------- -->
 
