@@ -1,18 +1,21 @@
+
+
 <div class="container">
+    <div class="jumbotron welcomegoat">
             {{#each goats}}
-                <h3> Selected Goat </h3>
-                <p> Id : {{id}}</p>
-                <p> Name : {{goat_name}}</p>
+                <h3><u> Selected Goat </u></h3>
+                <p hidden> Id : {{id}}</p>
+                <h3> Name : {{goat_name}}</h3>
                 <p> price : {{goat_price}} </p>
                 <img src= {{picture_url}} width="100px" height="100px">
                 <div id="goatId" value={{id}} type="hidden"> </div>
             {{/each}}
-
+    </div>
 <!-- /////////////////////////////////////////////////////////////////////////////// -->
 
           <div id="enterMember">
 
-          <h1> Add Member Details </h1>
+          <h3> Add Shipping Details </h3>
 
           <form action="/memAddTrans" method="post">
             <div class="form-group">
@@ -37,6 +40,7 @@
           </form>
 
         </div>
+        </hr>
 
 <!-- /////////////////////////////////////////////////////////////////////////////// -->
 
@@ -57,29 +61,6 @@
 
 </div>
 <!-- /////////////////////////////////////////////////////////////////////////////// -->
+        
 
-        <script type="text/javascript">
-
-        $(document).ready(function(){
-
-          $( window ).load(function() {
-            $("#memberData").hide();
-          };
-
-            $("#memberSubmit").on("click",function(){
-
-                console.log("Member Data Submitted");
-                
-                $("#memberData").show();
-                $("#enterMember").hide();
-                $("#adName").text($("#enName").val());
-                $("#adCredit").text($("#enCredit").val());
-                $("#adAdd").text($("#enAdd").val());
-                $("#Uid").name = "5";
-                $("#Mid").name = "4";
-                $("#Gid").name = "2";
-
-            });
-        });
-
-        </script>
+       
