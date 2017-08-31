@@ -1,4 +1,4 @@
-
+<div class="container">
 
   <h3> Welcome  </h3>
 
@@ -6,7 +6,7 @@
 
 <h2> User Loged In </h2>
 
-{{#each users}} 
+{{#each users}}
 
   <input type="hidden" id="logedInId" name = {{id}}>
   <input type="hidden" id="logedInEmail" name = {{email}}>
@@ -29,7 +29,6 @@
             </div>
 
             <button class="btn btn-success btn-xs" type="submit" id ="emailPass">Submit</button>
-          </div>
 
         </form>
 
@@ -47,11 +46,10 @@
             </div>
 
             <button class="btn btn-success btn-xs" type="submit" id ="emailPass">Submit</button>
-          </div>
 
         </form>
 
-
+</div>
 
 
 
@@ -59,7 +57,7 @@
 <!-- /////////////////////////////////////////////////////////////////////////////// -->
 
         <script type="text/javascript">
-        
+
         $(document).ready(function(){
             $("#memberData").hide();
             $("#memberSubmit").on("click",function(){
@@ -80,4 +78,3 @@
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script type="text/javascript" src="../public/js/members.js"></script>
-

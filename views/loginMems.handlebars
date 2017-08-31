@@ -1,8 +1,8 @@
 
-
+<div class="container">
 <h2> User Loged In </h2>
 
-{{#each users}} 
+{{#each users}}
 
 	<input type="hidden" id="logedInId" name = {{id}}>
 	<input type="hidden" id="logedInEmail" name = {{email}}>
@@ -11,7 +11,7 @@
 {{/each}}
 
 
-<h2> If you have the Login then Login </h2>
+<h2> If you have an account, please login </h2>
 
           <form action="/returnMems" method="post">
             <div class="form-group">
@@ -25,11 +25,10 @@
             </div>
 
             <button class="btn btn-success btn-xs" type="submit" id ="emailPass">Submit</button>
-          </div>
 
         </form>
 
-<h3> If you dont have a login - Sign Up </h3>
+<h3> If you dont have an account, please sign up </h3>
 
           <form action="/signUpMems" method="post">
             <div class="form-group">
@@ -47,7 +46,7 @@
 
         </form>
 
-
+</div>
 
 
 
@@ -55,7 +54,7 @@
 <!-- /////////////////////////////////////////////////////////////////////////////// -->
 
         <script type="text/javascript">
-        
+
         $(document).ready(function(){
             $("#memberData").hide();
             $("#memberSubmit").on("click",function(){

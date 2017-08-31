@@ -1,5 +1,5 @@
-
-            {{#each goats}} 
+<div class="container">
+            {{#each goats}}
                 <h3> Selected Goat </h3>
                 <p> Id : {{id}}</p>
                 <p> Name : {{goat_name}}</p>
@@ -10,10 +10,10 @@
 
 <!-- /////////////////////////////////////////////////////////////////////////////// -->
 
-          <div id="enterMember">  
+          <div id="enterMember">
 
           <h1> Add Member Details </h1>
-      
+
           <form action="/transactions" method="post">
             <div class="form-group">
               <label for="member_name"> Member Name </label>
@@ -34,8 +34,7 @@
             </div>
 
             <button class="btn btn-success btn-xs" type="submit" id ="memberSubmit">Add Details</button>
-          </div>
-        </form>
+          </form>
 
         </div>
 
@@ -54,11 +53,11 @@
           </form>
         </div>
 
-
+</div>
 <!-- /////////////////////////////////////////////////////////////////////////////// -->
 
         <script type="text/javascript">
-        
+
         $(document).ready(function(){
             $("#memberData").hide();
             $("#memberSubmit").on("click",function(){
@@ -70,7 +69,7 @@
                 $("#adAdd").text($("#enAdd").val());
                 $("#Uid").name = "5";
                 $("#Mid").name = "4";
-                $("#Gid").name = 
+                $("#Gid").name =
             });
         });
 
